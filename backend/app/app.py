@@ -3,6 +3,8 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
 
+import os
+
 from app.api.api_v1.router import router
 from app.core.config import settings
 from app.models.todo_model import Todo
@@ -27,7 +29,7 @@ async def app_init():
         initialize crucial application services
     """
     
-    db_client = AsyncIOMotorClient(settings.MONGO_CONNECTION_STRING).todoist
+    db_client = AsyncIOMotorClient(os.getenv("MONGO_CONNECTION_STRING")).todoist
     
     await init_beanie(
         database=db_client,
