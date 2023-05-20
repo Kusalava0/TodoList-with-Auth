@@ -24,7 +24,7 @@ export const NavBar = () => {
         color="white"
       >
         <Text as="h2" fontSize={24} fontWeight="bold">
-          FODOIST
+          TODO LIST
         </Text>
         <Stack direction="row" align="center" spacing={4}>
           <ThemeToggler size="lg" />

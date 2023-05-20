@@ -26,7 +26,7 @@ import axiosInstance from "../../services/axios";
 export const AddUpdateTodoModal = ({
   editable = false,
   defaultValues = {},
-  onSuccess = () => {},
+  onSuccess = () => { },
   ...rest
 }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -70,7 +70,7 @@ export const AddUpdateTodoModal = ({
   return (
     <Box {...rest}>
       <Button w="100%" colorScheme="green" onClick={onOpen}>
-        {editable ? "UPDATE FODO" : "ADD FODO"}
+        {editable ? "UPDATE TODO" : "ADD TODO"}
       </Button>
       <Modal
         closeOnOverlayClick={false}
@@ -82,7 +82,7 @@ export const AddUpdateTodoModal = ({
         <ModalOverlay />
         <form onSubmit={handleSubmit(onSubmit)}>
           <ModalContent>
-            <ModalHeader>{editable ? "Update Fodo" : "ADD FODO"}</ModalHeader>
+            <ModalHeader>{editable ? "Update Todo" : "ADD TODO"}</ModalHeader>
             <ModalCloseButton />
             <ModalBody>
               <FormControl isInvalid={errors.title}>

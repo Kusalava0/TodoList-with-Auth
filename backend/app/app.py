@@ -27,7 +27,7 @@ async def app_init():
         initialize crucial application services
     """
     
-    db_client = AsyncIOMotorClient(settings.MONGO_CONNECTION_STRING).fodoist
+    db_client = AsyncIOMotorClient(settings.MONGO_CONNECTION_STRING).todoist
     
     await init_beanie(
         database=db_client,
